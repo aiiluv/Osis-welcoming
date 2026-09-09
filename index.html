@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secret OSIS Mission</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- ================= SCREEN 1 ================= -->
+        <section class="screen active" id="screen1">
+
+            <div class="sticker sticker-star">✦</div>
+            <div class="sticker sticker-heart">♡</div>
+
+            <div class="agent-icon">
+                🕵️
+            </div>
+
+            <p class="classified">CLASSIFIED MESSAGE</p>
+
+            <h1>
+                Psst.. hey, kamu dapat web ini dari siapa?
+            </h1>
+
+            <p class="description">
+                Jangan kasih tau siapa-siapa ya.. <br>
+                Ini rahasia diantara kita aja! (eyak, diantara kita)
+            </p>
+
+            <button class="main-btn" onclick="nextScreen(2)">
+                Sip deh! →
+            </button>
+
+        </section>
+
+
+        <!-- ================= SCREEN 2 ================= -->
+        <section class="screen" id="screen2">
+
+            <div class="top-secret">TOP SECRET 🔐</div>
+
+            <h2>
+                Sebelumnya, kasih tau<br>
+                namamu dan kelasmu!
+            </h2>
+
+            <p class="description">
+                Aku perlu untuk konfirmasi ke...<br>
+                <span class="cough">*batuk* *batuk* atasan!</span>
+            </p>
+
+            <div class="form">
+
+                <label for="name">NAMA</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Nama lengkapmu..."
+                    autocomplete="off"
+                >
+
+                <label for="class">KELAS</label>
+                <input
+                    type="text"
+                    id="class"
+                    placeholder="Contoh: 11 Ipa"
+                    autocomplete="off"
+                >
+
+                <label for="division">DIVISI?</label>
+                <input
+                    type="text"
+                    id="division"
+                    placeholder="Contoh: Sawit hidayatullah"
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <p class="error" id="error">
+                Isi identitasmu dulu ya, Agent! 👀
+            </p>
+
+            <button class="main-btn" onclick="confirmIdentity()">
+                NEXT! →
+            </button>
+
+        </section>
+
+
+        <!-- ================= SCREEN 3 ================= -->
+        <section class="screen" id="screen3">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <p class="classified green">
+                IDENTITY CONFIRMED
+            </p>
+
+            <h2>
+                Okay! Identitasmu<br>
+                sudah terkonfirmasi!
+            </h2>
+
+            <p class="description">
+                Selamat datang, dan selamat bertugas
+            </p>
+
+            <h1 class="agent-name" id="welcomeName">
+                AGENT!
+            </h1>
+
+            <div class="confetti">✦ ✧ ★ ✦ ✧</div>
+
+            <button class="main-btn" onclick="showCard()">
+                BUATKAN KARTU AGENT! 🪪
+            </button>
+
+        </section>
+
+
+        <!-- ================= SCREEN 4 ================= -->
+        <section class="screen card-screen" id="screen4">
+
+            <p class="classified">
+                CONGRATULATIONS, AGENT!
+            </p>
+
+            <!-- CARD -->
+            <div class="agent-card" id="agentCard">
+
+                <div class="card-top">
+                    <div>
+                        <p class="mini-text">OSIS</p>
+                        <h3>SECRET AGENT</h3>
+                    </div>
+
+                    <div class="card-year">
+                        2026<br>
+                        <span>/ 2027</span>
+                    </div>
+                </div>
+
+                <div class="card-icon">
+                    🕵️
+                </div>
+
+                <div class="card-content">
+
+                    <h2>
+                        Congratulations,
+                        <span id="cardNameTitle">AGENT!</span>!
+                    </h2>
+
+                    <p class="card-description">
+                        Karena sudah menjadi salah satu anggota
+                        OSIS periode <b>2026/2027.</b>
+                    </p>
+
+                    <div class="secret-line">
+                        PST.. Ini identitasmu! 🤫
+                    </div>
+
+                    <div class="identity">
+
+                        <div class="identity-row">
+                            <span>NAMA</span>
+                            <strong id="cardName"></strong>
+                        </div>
+
+                        <div class="identity-row">
+                            <span>KELAS</span>
+                            <strong id="cardClass"></strong>
+                        </div>
+
+                        <div class="identity-row">
+                            <span>DIVISI</span>
+                            <strong id="cardDivision"></strong>
+                        </div>
+
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠ WARNING!</strong>
+                        <p>
+                            Untuk sementara ini, jangan beri tahu
+                            siapapun yaa! Tunggu sampai ada kabar
+                            lagi dari aku!!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <span>PROPERTY OF OSIS</span>
+                    <span>● ACTIVE AGENT</span>
+                </div>
+
+            </div>
+
+            <button class="main-btn download-btn" onclick="downloadCard()">
+                DOWNLOAD KARTU ↓
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- html2canvas untuk download kartu -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
