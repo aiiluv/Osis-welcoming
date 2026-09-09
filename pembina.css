@@ -1,0 +1,729 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Fredoka", sans-serif;
+
+    color: #3d2855;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            #ffd7eb 0,
+            #ffd7eb 8%,
+            transparent 9%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            #d8c8ff 0,
+            #d8c8ff 9%,
+            transparent 10%
+        ),
+
+        radial-gradient(
+            circle at 85% 90%,
+            #fff0a6 0,
+            #fff0a6 8%,
+            transparent 9%
+        ),
+
+        linear-gradient(
+            135deg,
+            #faf7ff,
+            #fffafd
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 800px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding: 40px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+    width: 100%;
+
+    display: none;
+
+    text-align: center;
+
+    animation: appear 0.7s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.decor {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    font-size: 45px;
+}
+
+.decor-1 {
+    top: 12%;
+    left: 8%;
+
+    color: #ff69b4;
+
+    transform: rotate(15deg);
+}
+
+.decor-2 {
+    bottom: 15%;
+    left: 10%;
+
+    color: #7c4dff;
+
+    transform: rotate(-15deg);
+
+    font-size: 60px;
+}
+
+.decor-3 {
+    top: 22%;
+    right: 9%;
+
+    color: #ffca3a;
+
+    font-size: 40px;
+
+    transform: rotate(10deg);
+}
+
+.decor-4 {
+    bottom: 10%;
+    right: 8%;
+
+    color: #69b7ff;
+
+    font-size: 55px;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-icon {
+    width: 125px;
+    height: 125px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffd85c;
+
+    border: 5px solid #4b286d;
+
+    border-radius: 35px;
+
+    font-size: 60px;
+
+    box-shadow: 8px 8px 0 #4b286d;
+
+    transform: rotate(-4deg);
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: rotate(-4deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-4deg) translateY(-8px);
+    }
+
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.tiny-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    background: #7c4dff;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1 {
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    color: #4b286d;
+
+    font-size: clamp(42px, 8vw, 68px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+}
+
+h2 {
+    color: #4b286d;
+
+    font-size: clamp(27px, 5vw, 38px);
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.opening-text {
+    max-width: 520px;
+
+    margin: 0 auto 30px;
+
+    color: #756580;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-btn {
+    border: none;
+
+    padding: 15px 27px;
+
+    background: #7c4dff;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    box-shadow: 5px 5px 0 #4b286d;
+
+    transition: all 0.2s ease;
+}
+
+.main-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 5px 9px 0 #4b286d;
+}
+
+.main-btn:active {
+    transform: translateY(2px);
+
+    box-shadow: 2px 2px 0 #4b286d;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-wrapper {
+    width: 100%;
+
+    max-width: 680px;
+
+    margin: 0 auto 30px;
+
+    padding: 10px;
+}
+
+.letter {
+
+    position: relative;
+
+    text-align: left;
+
+    background-color: #fffdf7;
+
+    border: 3px solid #4b286d;
+
+    border-radius: 6px;
+
+    box-shadow:
+        8px 8px 0 #ffb7d8,
+        14px 14px 0 #4b286d;
+
+    overflow: hidden;
+
+    transform: rotate(-0.5deg);
+}
+
+
+/* =========================
+   LETTER TOP
+========================= */
+
+.letter-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 25px;
+
+    background: #f1eaff;
+
+    border-bottom: 2px dashed #b9a1d1;
+
+    color: #765b8c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   LETTER CONTENT
+========================= */
+
+.letter-content {
+    padding: 35px 40px 40px;
+}
+
+.dear {
+    color: #ff4fa3;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    margin-bottom: 20px;
+}
+
+.letter-content h2 {
+    font-family: "Fredoka", sans-serif;
+
+    font-weight: 700;
+}
+
+.letter-content > p {
+    color: #65566f;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.highlight {
+    width: fit-content;
+
+    margin: 25px auto;
+
+    padding: 12px 18px;
+
+    background: #fff0a8;
+
+    border: 2px solid #e3b83f;
+
+    border-radius: 10px;
+
+    color: #76551d;
+
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+
+    font-size: 15px;
+}
+
+.highlight span {
+    color: #ff69b4;
+
+    margin: 0 8px;
+}
+
+
+/* =========================
+   DUA
+========================= */
+
+.dua {
+    padding: 18px 20px;
+
+    background: #f5efff;
+
+    border-left: 5px solid #7c4dff;
+
+    border-radius: 0 12px 12px 0;
+
+    color: #55406a !important;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px !important;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature {
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 2px dashed #d9cbe5;
+
+    text-align: right;
+}
+
+.signature p {
+    margin-bottom: 5px;
+
+    color: #8c789a;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+.signature strong {
+    color: #ff4fa3;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   LETTER FOOTER
+========================= */
+
+.letter-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 13px 25px;
+
+    background: #f1eaff;
+
+    color: #8b769e;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   SCREEN 3
+========================= */
+
+.thankyou-card {
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 45px 40px;
+
+    background: white;
+
+    border: 4px solid #4b286d;
+
+    border-radius: 30px;
+
+    box-shadow: 9px 9px 0 #ffb7d8;
+
+    text-align: center;
+}
+
+.flower {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ffd85c;
+
+    border: 4px solid #4b286d;
+
+    border-radius: 50%;
+
+    font-size: 38px;
+
+    color: #ff4fa3;
+}
+
+.thankyou-card h1 {
+    font-size: clamp(35px, 6vw, 55px);
+
+    margin-bottom: 25px;
+}
+
+.thankyou-card > p:not(.tiny-label):not(.small) {
+    max-width: 500px;
+
+    margin: 0 auto 18px;
+
+    color: #6c5c76;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.final-message {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 30px 0;
+
+    padding: 18px;
+
+    background: #fff1a8;
+
+    border-radius: 15px;
+
+    color: #684b1b;
+}
+
+.final-message span {
+    color: #ff4fa3;
+
+    font-size: 20px;
+}
+
+.final-message p {
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+
+    font-size: 16px;
+}
+
+.small {
+    color: #a18fae;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .decor {
+        display: none;
+    }
+
+    .envelope-icon {
+        width: 100px;
+        height: 100px;
+
+        font-size: 50px;
+
+        box-shadow: 6px 6px 0 #4b286d;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .opening-text {
+        font-size: 16px;
+    }
+
+    .letter-wrapper {
+        padding: 5px;
+    }
+
+    .letter {
+        box-shadow:
+            5px 5px 0 #ffb7d8,
+            9px 9px 0 #4b286d;
+    }
+
+    .letter-content {
+        padding: 28px 22px 30px;
+    }
+
+    .letter-content h2 {
+        font-size: 27px;
+    }
+
+    .letter-content > p {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .dear {
+        font-size: 18px;
+    }
+
+    .highlight {
+        font-size: 13px;
+
+        text-align: center;
+    }
+
+    .dua {
+        font-size: 14px !important;
+    }
+
+    .signature {
+        text-align: left;
+    }
+
+    .thankyou-card {
+        padding: 35px 22px;
+
+        border-radius: 24px;
+
+        box-shadow: 6px 6px 0 #ffb7d8;
+    }
+
+    .thankyou-card h1 {
+        font-size: 36px;
+    }
+
+    .final-message {
+        gap: 8px;
+    }
+
+    .final-message p {
+        font-size: 14px;
+    }
+
+    .main-btn {
+        max-width: 100%;
+    }
+}
